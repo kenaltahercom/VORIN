@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VORIN | Studio Desain Interior & Renovasi Eksklusif Semarang</title>
+  <meta name="description" content="Vorin adalah studio arsitektur dan renovasi interior turnkey terkemuka di Kota Semarang, Jawa Tengah. Menghadirkan kemewahan, presisi pengerjaan, dan material kelas dunia.">
+
+  <!-- Favicon using Logo -->
+  <link rel="icon" type="image/png" href="vorin-logo-preview-dark.png">
+
+  <!-- Google Fonts: Inter & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Solar Iconify Library -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#1C1C1E',
+            accent: {
+              DEFAULT: '#C8933A',
+              hover: '#B3822E',
+              light: '#E0AA4E',
+              50: '#FDF9F2',
+              100: '#F7EBD2',
+            },
+            light: '#F8F9FA',
+            charcoal: '#2C2C2E',
+            muted: '#8E8E93',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
+            ragick: ['Ragick', 'Montserrat', 'serif', 'sans-serif'],
+          },
+          keyframes: {
+            slideDown: {
+              '0%': { opacity: '0', transform: 'translateY(-8px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            pulseSubtle: {
+              '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+              '50%': { transform: 'scale(1.05)', opacity: '0.9' },
+            }
+          },
+          animation: {
+            slideDown: 'slideDown 0.35s ease-out forwards',
+            pulseSubtle: 'pulseSubtle 3s infinite ease-in-out',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <style>
+    /* Custom Ragick Font for Hero Main Title */
+    @font-face {
+      font-family: 'Ragick';
+      src: url('./ragick.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Global Selection Styling */
+    ::selection {
+      background-color: #C8933A;
+      color: #FFFFFF;
+    }
+
+    /* Scroll Reveal Transition */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Navigation Glassmorphism */
+    .nav-glass-light {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-glass-dark {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(28, 28, 30, 0.75);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Glass Dark Container (Trust Bar & Overlays) */
+    .glass-dark {
+      background: rgba(28, 28, 30, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .glass-card-dark {
+      background: rgba(35, 35, 38, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Hero Parallax Background */
+    .parallax-bg {
+      background-attachment: scroll;
+    }
+    @media (min-width: 1024px) {
+      .parallax-bg {
+        background-attachment: fixed;
+      }
+    }
+
+    /* Custom Input Style (.input-line: transparent, bottom border only, white text, accent focus) */
+    .input-line {
+      background-color: transparent !important;
+      border: none !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important;
+      border-radius: 0 !important;
+      color: #FFFFFF !important;
+      outline: none !important;
+      padding: 0.75rem 0.25rem !important;
+      transition: all 0.3s ease !important;
+      width: 100%;
+    }
+    .input-line:focus {
+      border-bottom-color: #C8933A !important;
+      box-shadow: 0 1px 0 0 #C8933A !important;
+    }
+    .input-line::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* Masonry Portfolio Layout */
+    .masonry-columns {
+      column-count: 1;
+      column-gap: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .masonry-columns {
+        column-count: 2;
+      }
+    }
+    @media (min-width: 1024px) {
+      .masonry-columns {
+        column-count: 3;
+      }
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      width: 100%;
+    }
+
+    /* FAQ Details / Summary Animation */
+    details > summary {
+      list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] summary .faq-icon {
+      transform: rotate(180deg);
+      color: #C8933A;
+    }
+    details[open] .faq-content {
+      animation: slideDown 0.3s ease-out forwards;
+    }
+
+    /* Google Maps Filter Effect */
+    .map-grayscale {
+      filter: grayscale(100%) contrast(90%) brightness(95%);
+      transition: filter 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .map-grayscale:hover {
+      filter: grayscale(0%) contrast(100%) brightness(100%);
+    }
+
+    /* Smooth Image Glow Effect */
+    .gold-glow {
+      box-shadow: 0 0 25px rgba(200, 147, 58, 0.2);
+    }
+    .gold-glow:hover {
+      box-shadow: 0 0 35px rgba(200, 147, 58, 0.4);
+    }
+
+    /* Hide scrollbars for sliders */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-light text-dark antialiased selection:bg-accent selection:text-white">
+
+  <!-- ========================================== -->
+  <!-- 1. FIXED NAVBAR WITH GLASSMORPHISM EFFECT  -->
+  <!-- ========================================== -->
+  <header id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-glass-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Brand Logo -->
+        <a href="#hero" class="flex items-center space-x-3 group">
+          <!-- Light logo when on dark navbar -->
+          <img id="nav-logo-light" src="vorin-logo-preview-light.png" alt="Vorin Interior" class="h-9 sm:h-10 w-auto object-contain transition-opacity duration-300">
+          <!-- Dark logo when on light glass navbar -->
+          <img id="nav-logo-dark" src="vorin-logo-preview-dark.png" alt="Vorin Interior" class="h-9 sm:h-10 w-auto object-contain transition-opacity duration-300 hidden">
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="#hero" class="nav-link text-sm font-medium tracking-wide uppercase text-white/90 hover:text-accent transition-colors duration-200">Beranda</a>
+          <a href="#tentang" class="nav-link text-sm font-medium tracking-wide uppercase text-white/90 hover:text-accent transition-colors duration-200">Tentang Kami</a>
+          <a href="#layanan" class="nav-link text-sm font-medium tracking-wide uppercase text-white/90 hover:text-accent transition-colors duration-200">Layanan</a>
+          <a href="#realisasi" class="nav-link text-sm font-medium tracking-wide uppercase text-white/90 hover:text-accent transition-colors duration-200">Portofolio</a>
+          <a href="#alur-kerja" class="nav-link text-sm font-medium tracking-wide uppercase text-white/90 hover:text-accent transition-colors duration-200">Alur Kerja</a>
+          <a href="#faq" class="nav-link text-sm font-medium tracking-wide uppercase text-white/90 hover:text-accent transition-colors duration-200">FAQ</a>
+          <a href="#kontak" class="nav-link text-sm font-medium tracking-wide uppercase text-white/90 hover:text-accent transition-colors duration-200">Kontak</a>
+        </nav>
+
+        <!-- CTA & Quick Action -->
+        <div class="hidden sm:flex items-center space-x-4">
+          <a href="https://wa.me/6281257591101?text=Halo%20Vorin%20Interior,%20saya%20ingin%20berkonsultasi%20mengenai%20desain%20dan%20renovasi%20interior." target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-accent text-white hover:bg-accent-hover transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+            <iconify-icon icon="solar:phone-calling-linear" class="text-base"></iconify-icon>
+            <span>Konsultasi Gratis</span>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <div class="flex items-center lg:hidden">
+          <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-white hover:text-accent focus:outline-none transition-colors" aria-label="Buka Menu Navigasi">
+            <iconify-icon icon="solar:hamburger-menu-linear" class="text-3xl"></iconify-icon>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Full-Width Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-dark/95 backdrop-blur-xl border-b border-white/10 px-6 py-8 transition-all">
+      <div class="flex flex-col space-y-4">
+        <a href="#hero" class="mobile-nav-link text-lg font-medium text-white hover:text-accent py-2 border-b border-white/10">Beranda</a>
+        <a href="#tentang" class="mobile-nav-link text-lg font-medium text-white hover:text-accent py-2 border-b border-white/10">Tentang Kami</a>
+        <a href="#layanan" class="mobile-nav-link text-lg font-medium text-white hover:text-accent py-2 border-b border-white/10">Layanan</a>
+        <a href="#realisasi" class="mobile-nav-link text-lg font-medium text-white hover:text-accent py-2 border-b border-white/10">Portofolio Realisasi</a>
+        <a href="#alur-kerja" class="mobile-nav-link text-lg font-medium text-white hover:text-accent py-2 border-b border-white/10">Alur Kerja</a>
+        <a href="#faq" class="mobile-nav-link text-lg font-medium text-white hover:text-accent py-2 border-b border-white/10">Tanya Jawab (FAQ)</a>
+        <a href="#kontak" class="mobile-nav-link text-lg font-medium text-white hover:text-accent py-2 border-b border-white/10">Hubungi Kami</a>
+
+        <div class="pt-4 flex flex-col space-y-3">
+          <a href="https://wa.me/6281257591101?text=Halo%20Vorin%20Interior,%20saya%20ingin%20berkonsultasi%20proyek%20renovasi." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-full text-sm font-semibold uppercase tracking-wider bg-accent text-white hover:bg-accent-hover transition-colors shadow-lg">
+            Hubungi WhatsApp: 081257591101
+          </a>
+          <a href="mailto:taherdaeng386@gmail.com" class="w-full text-center py-3 rounded-full text-sm font-semibold tracking-wider border border-white/20 text-white hover:bg-white/10 transition-colors">
+            Email: taherdaeng386@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================== -->
+  <!-- 2. HERO SECTION                            -->
+  <!-- Layer 0: Background image (Hero.jpg) with parallax-bg -->
+  <!-- Layer 1: Gradient overlay (from-dark/95 via-dark/60 to-dark/30) -->
+  <!-- Layer 2: Foreground content                -->
+  <!-- Layer 3: Trust Bar (glass-dark bg, absolute bottom-0, z-20) -->
+  <!-- ========================================== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-36 lg:pb-32">
+    
+    <!-- Layer 0: Background with Parallax -->
+    <div class="absolute inset-0 z-0 bg-cover bg-center parallax-bg scale-105 transform motion-safe:transition-transform duration-1000" style="background-image: url('Hero.jpg');"></div>
+
+    <!-- Layer 1: Gradient Overlay -->
+    <div class="absolute inset-0 z-10 bg-gradient-to-t from-dark/95 via-dark/65 to-dark/40"></div>
+    <div class="absolute inset-0 z-10 bg-gradient-to-r from-dark/80 via-transparent to-dark/60"></div>
+
+    <!-- Layer 2: Foreground Content -->
+    <div class="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-12 md:py-20">
+      
+      <!-- Studio Location Tagline -->
+      <div class="reveal inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-accent/20 border border-accent/40 text-accent text-xs sm:text-sm font-medium tracking-widest uppercase mb-6 backdrop-blur-md">
+        <iconify-icon icon="solar:map-point-linear" class="text-base text-accent"></iconify-icon>
+        <span>Studio Interior & Renovasi Eksklusif • Kota Semarang</span>
+      </div>
+
+      <!-- Main Headline using Custom Ragick Font -->
+      <h1 class="reveal font-ragick text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-none text-white drop-shadow-2xl mb-6">
+        VORIN INTERIOR
+      </h1>
+
+      <p class="reveal text-lg sm:text-2xl font-light text-gray-200 max-w-3xl mx-auto mb-4 tracking-wide font-display">
+        Mewujudkan Ruang Impian dengan Sentuhan Presisi, Kemewahan Abadi, & Estetika Tertinggi.
+      </p>
+
+      <p class="reveal text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-10 font-normal leading-relaxed">
+        Layanan renovasi interior turnkey terpadu untuk hunian prestisius, residensial mewah, villa, dan ruang komersial di Jawa Tengah. Dirancang dengan presisi arsitektural dan material premium tanpa kompromi.
+      </p>
+
+      <!-- CTA Action Buttons -->
+      <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <a href="#realisasi" class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-full bg-accent text-white font-semibold text-sm uppercase tracking-wider hover:bg-accent-hover transition-all duration-300 shadow-xl hover:shadow-accent/30 hover:-translate-y-1">
+          <span>Eksplorasi Portofolio</span>
+          <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+        </a>
+        
+        <a href="https://wa.me/6281257591101?text=Halo%20Vorin%20Interior,%20saya%20tertarik%20untuk%20konsultasi%20renovasi%20interior." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/25 font-semibold text-sm uppercase tracking-wider backdrop-blur-md transition-all duration-300 hover:-translate-y-1">
+          <iconify-icon icon="solar:chat-round-dots-linear" class="text-lg text-accent"></iconify-icon>
+          <span>Konsultasi Proyek</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Layer 3: Trust Bar (absolute bottom-0, z-20, glass-dark) -->
+    <div class="absolute bottom-0 left-0 right-0 z-20 glass-dark py-4 sm:py-5 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center text-white">
+          
+          <div class="border-r border-white/10 last:border-r-0 px-2">
+            <div class="flex items-center justify-center space-x-1">
+              <span class="counter text-2xl sm:text-3xl font-bold font-display text-accent" data-target="12">0</span>
+              <span class="text-2xl sm:text-3xl font-bold font-display text-accent">+</span>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-300 uppercase tracking-wider mt-0.5">Tahun Pengalaman</p>
+          </div>
+
+          <div class="border-r border-white/10 last:border-r-0 px-2">
+            <div class="flex items-center justify-center space-x-1">
+              <span class="counter text-2xl sm:text-3xl font-bold font-display text-accent" data-target="280">0</span>
+              <span class="text-2xl sm:text-3xl font-bold font-display text-accent">+</span>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-300 uppercase tracking-wider mt-0.5">Proyek Selesai</p>
+          </div>
+
+          <div class="border-r border-white/10 last:border-r-0 px-2">
+            <div class="flex items-center justify-center space-x-1">
+              <span class="counter text-2xl sm:text-3xl font-bold font-display text-accent" data-target="100">0</span>
+              <span class="text-2xl sm:text-3xl font-bold font-display text-accent">%</span>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-300 uppercase tracking-wider mt-0.5">Kepuasan Klien</p>
+          </div>
+
+          <div class="px-2">
+            <div class="flex items-center justify-center space-x-1">
+              <span class="counter text-2xl sm:text-3xl font-bold font-display text-accent" data-target="3">0</span>
+              <span class="text-2xl sm:text-3xl font-bold font-display text-accent">Th</span>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-300 uppercase tracking-wider mt-0.5">Garansi Resmi Konstruksi</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 3. ABOUT SECTION (O NAS / TENTANG VORIN)   -->
+  <!-- ========================================== -->
+  <section id="tentang" class="py-24 bg-light relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Image Composition -->
+        <div class="lg:col-span-6 relative reveal">
+          <div class="relative mx-auto max-w-lg lg:max-w-none">
+            
+            <!-- Main Featured Image (Aset 12 - Grand Double-Height Living) -->
+            <div class="rounded-2xl overflow-hidden shadow-2xl relative z-10 border-4 border-white">
+              <img src="aset%2012.jpg" alt="Interior Mewah Vorin Semarang" class="w-full h-[480px] sm:h-[560px] object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+
+            <!-- Floating Badge Card 1 -->
+            <div class="absolute -bottom-6 -left-4 sm:-bottom-8 sm:-left-8 z-20 bg-dark text-white p-5 rounded-xl shadow-2xl border border-white/10 max-w-xs backdrop-blur-lg">
+              <div class="flex items-center space-x-3 mb-2">
+                <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                  <iconify-icon icon="solar:medal-ribbons-star-linear" class="text-2xl"></iconify-icon>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold tracking-wide font-display">Standar Material Terbaik</h4>
+                  <p class="text-xs text-gray-400">Marmer, Solid Wood & Hardware Eropa</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge Card 2 (Top Right) -->
+            <div class="absolute -top-6 -right-4 sm:-top-8 sm:-right-8 z-20 bg-white p-4 rounded-xl shadow-xl border border-gray-100 text-dark hidden sm:block">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                  <iconify-icon icon="solar:shield-check-linear" class="text-2xl"></iconify-icon>
+                </div>
+                <div>
+                  <p class="text-xs text-muted uppercase font-semibold">Komitmen Kami</p>
+                  <p class="text-sm font-bold font-display">Tepat Waktu & Anggaran</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Decorative Gold Glow -->
+            <div class="absolute -top-10 -left-10 w-48 h-48 bg-accent/15 rounded-full blur-3xl -z-10"></div>
+          </div>
+        </div>
+
+        <!-- Right Content Narrative -->
+        <div class="lg:col-span-6 reveal">
+          <div class="inline-flex items-center space-x-2 text-accent font-semibold tracking-widest text-xs uppercase mb-3">
+            <span class="w-8 h-0.5 bg-accent"></span>
+            <span>Tentang Vorin Interior</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-dark tracking-tight leading-tight mb-6">
+            Menciptakan Ruang Hidup yang Mencerminkan Karakter & Prestise Anda.
+          </h2>
+
+          <p class="text-gray-600 leading-relaxed mb-6 font-normal">
+            Vorin Interior didirikan di Kota Semarang dengan visi sederhana namun tegas: menghadirkan standar pengerjaan renovasi interior yang transparan, presisi milimeter, dan memiliki nilai estetika tinggi. Kami percaya bahwa interior hunian bukan sekadar furnitur, melainkan panggung kehidupan Anda sehari-hari.
+          </p>
+
+          <p class="text-gray-600 leading-relaxed mb-8 font-normal">
+            Dari renovasi total rumah tinggal di Candisari dan Gajahmungkur, hingga apartemen modern dan ruang komersial di penjuru Jawa Tengah, setiap sudut dikerjakan oleh tim arsitek, desainer 3D, dan tukang kayu spesialis berpengalaman dengan pengawasan terpadu.
+          </p>
+
+          <!-- Core Value Points with Solar Icons -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div class="flex items-start space-x-3">
+              <iconify-icon icon="solar:check-circle-linear" class="text-xl text-accent mt-0.5 flex-shrink-0"></iconify-icon>
+              <div>
+                <h5 class="text-sm font-semibold text-dark font-display">RAB Terkunci & Transparan</h5>
+                <p class="text-xs text-gray-500 mt-0.5">Tidak ada biaya siluman di tengah progres pengerjaan.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <iconify-icon icon="solar:check-circle-linear" class="text-xl text-accent mt-0.5 flex-shrink-0"></iconify-icon>
+              <div>
+                <h5 class="text-sm font-semibold text-dark font-display">Workshop & Pabrikasi In-House</h5>
+                <p class="text-xs text-gray-500 mt-0.5">Kualitas finishing HPL, duco, dan veneer terkontrol penuh.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <iconify-icon icon="solar:check-circle-linear" class="text-xl text-accent mt-0.5 flex-shrink-0"></iconify-icon>
+              <div>
+                <h5 class="text-sm font-semibold text-dark font-display">3D Render Fotorealistik 4K</h5>
+                <p class="text-xs text-gray-500 mt-0.5">Visualisasi nyata sebelum baut pertama dipasang.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <iconify-icon icon="solar:check-circle-linear" class="text-xl text-accent mt-0.5 flex-shrink-0"></iconify-icon>
+              <div>
+                <h5 class="text-sm font-semibold text-dark font-display">Garansi Purna Jual Resmi</h5>
+                <p class="text-xs text-gray-500 mt-0.5">Perlindungan jaminan konstruksi dan aksesoris hingga 3 tahun.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <div class="flex items-center space-x-4">
+            <a href="https://wa.me/6281257591101?text=Halo%20Vorin%20Interior,%20saya%20ingin%20jadwalkan%20survei%20lokasi%20di%20Semarang." target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-6 py-3.5 rounded-full bg-dark text-white font-medium text-xs uppercase tracking-wider hover:bg-accent hover:text-white transition-all duration-300 shadow-md">
+              <iconify-icon icon="solar:map-point-linear" class="text-base text-accent"></iconify-icon>
+              <span>Jadwalkan Survei Lokasi Gratis</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 4. SERVICES SECTION (USŁUGI / LAYANAN)     -->
+  <!-- Relative overflow-hidden with white/5 gradient decorative layer on right -->
+  <!-- ========================================== -->
+  <section id="layanan" class="py-24 bg-dark text-white relative overflow-hidden">
+    
+    <!-- Decorative Gradient Layer (white/5 gradient on the right as per requirement) -->
+    <div class="absolute top-0 right-0 bottom-0 w-1/2 bg-gradient-to-l from-white/[0.05] to-transparent pointer-events-none"></div>
+    <div class="absolute -bottom-48 -right-48 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <div class="inline-flex items-center space-x-2 text-accent font-semibold tracking-widest text-xs uppercase mb-3">
+          <span class="w-8 h-0.5 bg-accent"></span>
+          <span>Layanan Unggulan Kami</span>
+          <span class="w-8 h-0.5 bg-accent"></span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white mb-4">
+          Solusi Arsitektur & Renovasi Interior Holistik
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+          Kami mengelola seluruh siklus hidup proyek interior Anda dari fase perancangan konseptual, pekerjaan sipil, instalasi MEP, hingga detail furnitur kustom.
+        </p>
+      </div>
+
+      <!-- Services Grid (6 Core Specialized Services) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Service 1: Renovasi Total Hunian -->
+        <div class="reveal glass-card-dark p-8 rounded-2xl border border-white/10 hover:border-accent/60 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+          <div class="w-14 h-14 rounded-xl bg-accent/15 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+            <iconify-icon icon="solar:sofa-2-linear" class="text-3xl"></iconify-icon>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-accent transition-colors">
+            Renovasi Total Hunian Mewah
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Transformasi menyeluruh rumah tinggal, villa, dan penthouse. Meliputi perombakan tata ruang, drop ceiling arsitektural, dinding marmer & panel akustik, serta serah terima kunci (turnkey).
+          </p>
+          <ul class="space-y-2 text-xs text-gray-300 border-t border-white/10 pt-4">
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Pembongkaran & rekonstruksi terstruktur</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Lantai marmer impor & parquet premium</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 2: Kitchen Set & Custom Cabinetry -->
+        <div class="reveal glass-card-dark p-8 rounded-2xl border border-white/10 hover:border-accent/60 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+          <div class="w-14 h-14 rounded-xl bg-accent/15 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+            <iconify-icon icon="solar:kitchen-hood-linear" class="text-3xl"></iconify-icon>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-accent transition-colors">
+            Kitchen Set & Custom Built-in
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Dapur gourmet dan pantry elegan dengan tabletop Quartz Stone, hardware Blum / Hafele soft-close, concealed cooker hood, dan cabinet HPL anti-scratch higienis.
+          </p>
+          <ul class="space-y-2 text-xs text-gray-300 border-t border-white/10 pt-4">
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Island table dengan breakfast bar</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Walk-in wardrobe & master closet</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 3: Desain Arsitektural & 3D Render -->
+        <div class="reveal glass-card-dark p-8 rounded-2xl border border-white/10 hover:border-accent/60 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+          <div class="w-14 h-14 rounded-xl bg-accent/15 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+            <iconify-icon icon="solar:ruler-angular-linear" class="text-3xl"></iconify-icon>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-accent transition-colors">
+            Desain Arsitektur & 3D Photoreal
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Perancangan konsep denah, gambar kerja arsitektur lengkap (MEP, struktur), pemilihan katalog material asli, dan visualisasi render 4K yang detail dan presisi.
+          </p>
+          <ul class="space-y-2 text-xs text-gray-300 border-t border-white/10 pt-4">
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Virtual 360° walkthrough interaktif</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Spesifikasi material & moodboard sampel fisik</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 4: Kamar Mandi & Spa Pribadi -->
+        <div class="reveal glass-card-dark p-8 rounded-2xl border border-white/10 hover:border-accent/60 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+          <div class="w-14 h-14 rounded-xl bg-accent/15 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+            <iconify-icon icon="solar:bath-linear" class="text-3xl"></iconify-icon>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-accent transition-colors">
+            Kamar Mandi Mewah & Spa Retreat
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Renovasi kamar mandi master berstandar resor bintang lima. Sistem waterproofing multi-layer bergaransi anti-bocor, dinding porcelain slab, freestanding tub, dan sanitari premium.
+          </p>
+          <ul class="space-y-2 text-xs text-gray-300 border-t border-white/10 pt-4">
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Kran & shower concealed brushed brass / gunmetal</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Cermin pintar anti-embun & ambient LED</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 5: Ruang Komersial, Kafe & Kantor -->
+        <div class="reveal glass-card-dark p-8 rounded-2xl border border-white/10 hover:border-accent/60 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+          <div class="w-14 h-14 rounded-xl bg-accent/15 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+            <iconify-icon icon="solar:buildings-linear" class="text-3xl"></iconify-icon>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-accent transition-colors">
+            Komersial, Kafe & Executive Office
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Pengerjaan interior komersial yang meningkatkan impresi brand, kenyamanan pelanggan, dan produktivitas tim. Ruang meeting kedap suara, co-working space, dan kafe tematik instagramable.
+          </p>
+          <ul class="space-y-2 text-xs text-gray-300 border-t border-white/10 pt-4">
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Akustik ruangan & tata cahaya fungsional</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Pengerjaan cepat dengan sistem kerja shift malam</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 6: Smart Home & Architectural Lighting -->
+        <div class="reveal glass-card-dark p-8 rounded-2xl border border-white/10 hover:border-accent/60 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+          <div class="w-14 h-14 rounded-xl bg-accent/15 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+            <iconify-icon icon="solar:smart-home-linear" class="text-3xl"></iconify-icon>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-accent transition-colors">
+            Smart Home & Architectural Lighting
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Integrasi pencahayaan tersembunyi ber-CRI 95+ (warm white 3000K), magnetic track light fleksibel, saklar sentuh pintar, dan kontrol tirai otomatis terpadu smartphone.
+          </p>
+          <ul class="space-y-2 text-xs text-gray-300 border-t border-white/10 pt-4">
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Automasi skenario lampu siang & malam</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <iconify-icon icon="solar:check-circle-linear" class="text-accent"></iconify-icon>
+              <span>Efisiensi energi dengan sensor presensi</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 5. REALIZACJE / PORTFOLIO (MASONRY GALLERY) -->
+  <!-- All 13 assets with dedicated titles, locations, and descriptions -->
+  <!-- ========================================== -->
+  <section id="realisasi" class="py-24 bg-light relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header & Filter Controls -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 reveal">
+        <div>
+          <div class="inline-flex items-center space-x-2 text-accent font-semibold tracking-widest text-xs uppercase mb-3">
+            <span class="w-8 h-0.5 bg-accent"></span>
+            <span>Realizacje • Portofolio Karya Kami</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-dark tracking-tight">
+            Karya Nyata & Transformasi Ruang
+          </h2>
+          <p class="text-gray-600 text-sm sm:text-base mt-2 max-w-xl">
+            Jelajahi dokumentasi proyek renovasi dan desain interior yang telah kami realisasikan dengan dedikasi penuh di Semarang dan sekitarnya.
+          </p>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="mt-6 md:mt-0 flex flex-wrap gap-2" id="portfolio-filters">
+          <button data-filter="all" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-dark text-white shadow-sm transition-all">Semua Proyek (13)</button>
+          <button data-filter="living" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 transition-all">Living & Void</button>
+          <button data-filter="bedroom" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 transition-all">Kamar Tidur</button>
+          <button data-filter="kitchen" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 transition-all">Dapur & Dining</button>
+          <button data-filter="bath" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 transition-all">Kamar Mandi</button>
+          <button data-filter="commercial" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 transition-all">Komersial & Kantor</button>
+        </div>
+      </div>
+
+      <!-- Masonry Gallery Container (columns-1 sm:columns-2 lg:columns-3) -->
+      <div class="masonry-columns" id="portfolio-grid">
+        
+        <!-- ITEM 1 (aset 1.jpg) -->
+        <div class="masonry-item reveal" data-category="bedroom">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="1"
+               data-title="Master Suite & Acoustic Slat Wardrobe"
+               data-category="Kamar Tidur & Wardrobe"
+               data-location="Bukit Sari, Candisari, Semarang"
+               data-img="aset 1.jpg"
+               data-desc="Renovasi menyeluruh kamar tidur utama dengan konsep modern kontemporer. Menggabungkan panel dinding acoustic slat bernuansa walnut, concealed ambient LED lighting 3000K, dan walk-in wardrobe custom berbahan high-grade HPL anti-scratch dengan pintu kaca tempered grey bronze.">
+            <img src="aset%201.jpg" alt="Master Suite & Wardrobe Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <!-- Backdrop Blur Overlay on Hover -->
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Kamar Tidur & Wardrobe • Bukit Sari</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Master Suite & Acoustic Slat Wardrobe</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Aksen panel kayu walnut dengan pencahayaan tersembunyi warm light dan walk-in wardrobe kaca modern.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <!-- Permanent Card Caption Below Image for Clarity -->
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Master Suite & Acoustic Slat Wardrobe</h4>
+            <p class="text-xs text-gray-500">Bukit Sari, Candisari, Semarang • Panel Kayu & Walk-in Closet</p>
+          </div>
+        </div>
+
+        <!-- ITEM 2 (aset 2.jpg) -->
+        <div class="masonry-item reveal" data-category="living">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="2"
+               data-title="Open-Plan Living & Dining Terbuka"
+               data-category="Living & Dining"
+               data-location="Bukit Golf, Gajahmungkur, Semarang"
+               data-img="aset 2.jpg"
+               data-desc="Transformasi ruang keluarga terintegrasi dengan area makan luas tanpa sekat partisi kaku. Dilengkapi plafon drop ceiling bertingkat dengan aksen profil minimalis, lantai marmer glazed polished, dan bukaan kaca panorama yang memaksimalkan sirkulasi udara optimal.">
+            <img src="aset%202.jpg" alt="Open-Plan Living Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Living & Dining • Gajahmungkur</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Open-Plan Living & Dining Terbuka</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Integrasi ruang santai keluarga dan ruang makan bergaya kontemporer dengan bukaan cahaya luas.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Open-Plan Living & Dining Terbuka</h4>
+            <p class="text-xs text-gray-500">Gajahmungkur, Semarang • Tata Ruang Terbuka & Drop Ceiling</p>
+          </div>
+        </div>
+
+        <!-- ITEM 3 (aset 3.jpg) -->
+        <div class="masonry-item reveal" data-category="bedroom">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="3"
+               data-title="Modern Serene Master Bedroom"
+               data-category="Kamar Tidur"
+               data-location="Banyumanik Residence, Semarang"
+               data-img="aset 3.jpg"
+               data-desc="Penataan kamar tidur berkarakter tenang dan hangat. Headboard custom berbalut kain velvet lembut dengan aksen kuningan gold-plated, bedside table gantung hemat ruang, dan sistem pencahayaan multi-zone yang dapat diatur suasananya via smart home control.">
+            <img src="aset%203.jpg" alt="Modern Serene Bedroom Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Kamar Tidur • Banyumanik</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Modern Serene Master Bedroom</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Headboard beludru empuk, aksen kuningan mewah, dan pencahayaan smart multi-zone.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Modern Serene Master Bedroom</h4>
+            <p class="text-xs text-gray-500">Banyumanik, Semarang • Headboard Velvet & Smart Ambient</p>
+          </div>
+        </div>
+
+        <!-- ITEM 4 (aset 4.jpg) -->
+        <div class="masonry-item reveal" data-category="commercial">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="4"
+               data-title="Private Executive Home Office & Library"
+               data-category="Komersial & Kantor"
+               data-location="CitraGrand, Sambiroto, Semarang"
+               data-img="aset 4.jpg"
+               data-desc="Ruang kerja privat bergaya industrial-luxe dengan rak buku terintegrasi setinggi plafon, meja kerja solid wood trembesi dengan pelindung matte polyurethane, serta dinding peredam suara untuk kenyamanan meeting virtual dan produktivitas tinggi.">
+            <img src="aset%204.jpg" alt="Executive Home Office Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Ruang Kerja • CitraGrand</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Executive Home Office & Library</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Rak buku floor-to-ceiling, meja solid wood, dan dinding akustik kedap suara.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Executive Home Office & Library</h4>
+            <p class="text-xs text-gray-500">CitraGrand, Semarang • Rak Built-in & Akustik Kedap Suara</p>
+          </div>
+        </div>
+
+        <!-- ITEM 5 (aset 5.jpg) -->
+        <div class="masonry-item reveal" data-category="kitchen">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="5"
+               data-title="Gourmet Island Kitchen & Clean Bar"
+               data-category="Dapur & Dining"
+               data-location="Graha Candi Golf, Semarang"
+               data-img="aset 5.jpg"
+               data-desc="Dapur bersih impian dengan meja island kuarsa (quartz stone) tahan gores dan noda, kabinet seamless push-to-open berlapis ultra-matte finish, cooker hood tersembunyi berdaya hisap tinggi, serta lighting strip tersembunyi yang menegaskan siluet mewah.">
+            <img src="aset%205.jpg" alt="Gourmet Island Kitchen Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Dapur & Pantry • Graha Candi Golf</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Gourmet Island Kitchen & Clean Bar</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Top table Quartz Stone, kabinet ultra-matte, dan integrasi peralatan built-in premium.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Gourmet Island Kitchen & Clean Bar</h4>
+            <p class="text-xs text-gray-500">Graha Candi Golf, Semarang • Meja Island Quartz & Kabinet Anti-Noda</p>
+          </div>
+        </div>
+
+        <!-- ITEM 6 (aset 6.jpg) -->
+        <div class="masonry-item reveal" data-category="living">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="6"
+               data-title="Architectural Staircase & Feature Foyer"
+               data-category="Living & Void"
+               data-location="Jl. Rinjani, Gajahmungkur, Semarang"
+               data-img="aset 6.jpg"
+               data-desc="Revitalisasi area tangga utama dan entrance foyer dengan railing tempered glass tanpa frame, pijakan kayu jati solid oven, dan dinding bertekstur micro-cement travertine yang dipadukan dengan chandelier geometri kontemporer.">
+            <img src="aset%206.jpg" alt="Architectural Staircase Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Arsitektur Foyer • Gajahmungkur</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Architectural Staircase & Feature Foyer</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Railing kaca frameless, anak tangga jati solid, dan aksen dinding travertine elegan.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Architectural Staircase & Feature Foyer</h4>
+            <p class="text-xs text-gray-500">Gajahmungkur, Semarang • Tangga Kaca Frameless & Kayu Jati Oven</p>
+          </div>
+        </div>
+
+        <!-- ITEM 7 (aset 7.jpg) -->
+        <div class="masonry-item reveal" data-category="bath">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="7"
+               data-title="Spa-Inspired Luxury Bathroom Retreat"
+               data-category="Kamar Mandi"
+               data-location="Puri Anjasmoro, Marina, Semarang"
+               data-img="aset 7.jpg"
+               data-desc="Renovasi kamar mandi master berstandar hotel bintang lima. Menggunakan dinding slab porcelain marmer bookmatched Calacatta Gold, freestanding bathtub dengan kran standing berwarna brushed brass, vanity cabinet gantung, dan cermin LED anti-fog touch switch.">
+            <img src="aset%207.jpg" alt="Luxury Bathroom Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Kamar Mandi Mewah • Puri Anjasmoro</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Spa-Inspired Luxury Bathroom Retreat</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Slab porcelain marmer Calacatta, bathtub freestanding, dan sanitary brushed gold.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Spa-Inspired Luxury Bathroom Retreat</h4>
+            <p class="text-xs text-gray-500">Puri Anjasmoro, Semarang • Marmer Calacatta & Freestanding Tub</p>
+          </div>
+        </div>
+
+        <!-- ITEM 8 (aset 8.jpg) -->
+        <div class="masonry-item reveal" data-category="living">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="8"
+               data-title="Grand Salon & Entertainment Lounge"
+               data-category="Living & Void"
+               data-location="Bukit Wahid Regency, Semarang"
+               data-img="aset 8.jpg"
+               data-desc="Area kumpul keluarga dan jamuan prestisius dengan perpaduan panel marmer Nero Marquina, sofa modular kustom berstandar ergonomis, akustik ruangan berpresisi tinggi untuk audio entertainment, serta wall art berpadu pencahayaan spotlight kurasi galeri.">
+            <img src="aset%208.jpg" alt="Grand Salon & Lounge Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Living Room • Bukit Wahid</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Grand Salon & Entertainment Lounge</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Panel marmer hitam Nero Marquina, tata suara akustik sinematik, dan sofa custom.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Grand Salon & Entertainment Lounge</h4>
+            <p class="text-xs text-gray-500">Bukit Wahid, Semarang • Marmer Hitam Nero & Akustik Sinematik</p>
+          </div>
+        </div>
+
+        <!-- ITEM 9 (aset 9.jpg) -->
+        <div class="masonry-item reveal" data-category="commercial">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="9"
+               data-title="Boutique Cafe & Creative Co-Working"
+               data-category="Komersial & Kantor"
+               data-location="Kawasan Kota Lama & Pleburan, Semarang"
+               data-img="aset 9.jpg"
+               data-desc="Desain dan pengerjaan interior komersial yang mengutamakan visual appeal dan kenyamanan pelanggan. Memadukan unsur bata ekspos industrial refined, tanaman indoor biofilik, furnitur kustom tahan banting, dan tata cahaya estetik untuk sudut foto ikonik.">
+            <img src="aset%209.jpg" alt="Boutique Cafe Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Komersial • Kota Lama & Pleburan</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Boutique Cafe & Creative Co-Working</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Gaya industrial kontemporer dengan elemen biofilik dan sudut foto photogenic.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Boutique Cafe & Creative Co-Working</h4>
+            <p class="text-xs text-gray-500">Semarang • Desain Komersial Menawan & Tata Cahaya Fotogenik</p>
+          </div>
+        </div>
+
+        <!-- ITEM 10 (aset 10.jpg) -->
+        <div class="masonry-item reveal" data-category="kitchen">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="10"
+               data-title="Warm Scandinavian Dining & Pantry"
+               data-category="Dapur & Dining"
+               data-location="BSB City, Mijen, Semarang"
+               data-img="aset 10.jpg"
+               data-desc="Ruang makan bernuansa Japandi-Scandinavian yang hangat dan lapang. Meja makan kayu oak solid untuk 8 orang, kursi ergonomis berlapis fabric tahan tumpahan, credenza ramping fungsional, dan pencahayaan liontin gantung karya desainer ternama.">
+            <img src="aset%2010.jpg" alt="Scandinavian Dining Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Dining Area • BSB City</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Warm Scandinavian Dining & Pantry</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Meja makan kayu Oak solid, kursi fabric tahan air, dan lampu gantung estetik.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Warm Scandinavian Dining & Pantry</h4>
+            <p class="text-xs text-gray-500">BSB City, Semarang • Kayu Oak Solid & Nuansa Japandi Alami</p>
+          </div>
+        </div>
+
+        <!-- ITEM 11 (aset 11.jpg) -->
+        <div class="masonry-item reveal" data-category="living">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="11"
+               data-title="Cozy Reading Nook & Aesthetic Corner"
+               data-category="Living & Void"
+               data-location="Tembalang Hills, Semarang"
+               data-img="aset 11.jpg"
+               data-desc="Pemanfaatan sudut ruangan menjadi oasis relaksasi privat. Dilengkapi daybed custom built-in dengan storage tersembunyi di bagian bawah, dinding panel wainscoting modern berwarna warm grey, dan pencahayaan baca terarah yang menenangkan.">
+            <img src="aset%2011.jpg" alt="Reading Nook Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Sudut Estetik • Tembalang</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Cozy Reading Nook & Aesthetic Corner</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Bangku built-in dengan laci penyimpanan rahasia dan panel wainscoting minimalis.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Cozy Reading Nook & Aesthetic Corner</h4>
+            <p class="text-xs text-gray-500">Tembalang, Semarang • Built-in Daybed & Wainscoting Halus</p>
+          </div>
+        </div>
+
+        <!-- ITEM 12 (aset 12.jpg - Ultra Tall Portrait) -->
+        <div class="masonry-item reveal" data-category="living">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="12"
+               data-title="Double-Height Void Living & Grand Wall Panel"
+               data-category="Living & Void"
+               data-location="Candi Sari Residence, Semarang"
+               data-img="aset 12.jpg"
+               data-desc="Mahakarya interior ruang keluarga dengan ketinggian langit-langit double-height 6.5 meter. Menampilkan instalasi dinding backdrop megah perpaduan lembaran marmer impor, panel kayu berlubang akustik, kisi-kisi metalik bronze, dan gorden motorize otomatis terintegrasi.">
+            <img src="aset%2012.jpg" alt="Double-Height Living Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Double Height Void • Candi Sari</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Double-Height Void & Grand Wall Panel</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Langit-langit megah 6.5 meter dengan marmer dinding bookmatched dan panel bronze.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Double-Height Void & Grand Wall Panel</h4>
+            <p class="text-xs text-gray-500">Candi Sari, Semarang • Void Megah 6.5 Meter & Dinding Akustik Marmer</p>
+          </div>
+        </div>
+
+        <!-- ITEM 13 (aset 13.jpg) -->
+        <div class="masonry-item reveal" data-category="living">
+          <div class="group relative rounded-2xl overflow-hidden shadow-lg bg-dark cursor-pointer project-card"
+               data-id="13"
+               data-title="Semi-Outdoor Terrace & Solarium Lounge"
+               data-category="Living & Void"
+               data-location="Marina Bay Hills, Semarang"
+               data-img="aset 13.jpg"
+               data-desc="Transisi harmonis antara ruang dalam dan taman luar. Menggunakan decking kayu ulin kalimantan anti-cuaca, kanopi kaca laminated dengan peredam panas UV, furnitur all-weather wicker tahan cuaca, serta sistem drainase tersembunyi yang rapi.">
+            <img src="aset%2013.jpg" alt="Semi-Outdoor Terrace Vorin" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 flex flex-col justify-end p-6 text-white">
+              <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-1">Semi-Outdoor • Marina Hills</span>
+              <h4 class="text-lg font-bold font-display text-white mb-2">Semi-Outdoor Terrace & Solarium Lounge</h4>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4">Decking kayu ulin anti-rayap, kanopi kaca UV protection, dan perabotan santai tahan cuaca.</p>
+              <div class="flex items-center space-x-2 text-accent text-xs font-semibold">
+                <span>Buka Detail Proyek</span>
+                <iconify-icon icon="solar:arrow-up-right-linear" class="text-base"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2.5 px-2">
+            <h4 class="text-sm font-bold font-display text-dark">Semi-Outdoor Terrace & Solarium Lounge</h4>
+            <p class="text-xs text-gray-500">Marina Hills, Semarang • Decking Kayu Ulin & Kanopi Kaca UV</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 6. FEATURED SLIDER & BEFORE-AFTER SHOWCASE  -->
+  <!-- ========================================== -->
+  <section class="py-20 bg-white relative overflow-hidden border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+        <div class="inline-flex items-center space-x-2 text-accent font-semibold tracking-widest text-xs uppercase mb-3">
+          <span class="w-8 h-0.5 bg-accent"></span>
+          <span>Sorotan Transformasi & Interaktif</span>
+          <span class="w-8 h-0.5 bg-accent"></span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-display text-dark tracking-tight">
+          Visualisasi Kualitas Eksekusi Nyata
+        </h2>
+        <p class="text-gray-500 text-sm mt-2">
+          Geser atau telusuri carousel untuk melihat detail pengerjaan finishing halus dari studio Vorin.
+        </p>
+      </div>
+
+      <!-- Interactive Highlight Carousel / Slider -->
+      <div class="relative reveal">
+        <div id="carousel-track" class="flex overflow-x-auto space-x-6 pb-6 no-scrollbar snap-x snap-mandatory scroll-smooth">
+          
+          <!-- Slide Card 1 -->
+          <div class="snap-center flex-shrink-0 w-80 sm:w-96 rounded-2xl overflow-hidden bg-light shadow-md border border-gray-100 group">
+            <div class="h-64 overflow-hidden relative">
+              <img src="aset%205.jpg" alt="Dapur Bersih Vorin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">Kitchen Island</span>
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold font-display text-dark text-lg mb-1">Dapur Island Kuarsa Presisi</h4>
+              <p class="text-xs text-gray-500 mb-4">Meja island seamless dengan sink undermount dan colokan pop-up otomatis.</p>
+              <div class="text-accent text-xs font-semibold flex items-center space-x-1">
+                <span>Material: Silestone Quartz & Duco Matte</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide Card 2 -->
+          <div class="snap-center flex-shrink-0 w-80 sm:w-96 rounded-2xl overflow-hidden bg-light shadow-md border border-gray-100 group">
+            <div class="h-64 overflow-hidden relative">
+              <img src="aset%201.jpg" alt="Master Suite Vorin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">Master Suite</span>
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold font-display text-dark text-lg mb-1">Acoustic Wall Slat & Wardrobe</h4>
+              <p class="text-xs text-gray-500 mb-4">Panel peredam gema ruang dengan pencahayaan hangat dan lemari kaca elegan.</p>
+              <div class="text-accent text-xs font-semibold flex items-center space-x-1">
+                <span>Material: Walnut Veneer & Tempered Glass</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide Card 3 -->
+          <div class="snap-center flex-shrink-0 w-80 sm:w-96 rounded-2xl overflow-hidden bg-light shadow-md border border-gray-100 group">
+            <div class="h-64 overflow-hidden relative">
+              <img src="aset%207.jpg" alt="Luxury Bathroom Vorin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">Spa Sanctuary</span>
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold font-display text-dark text-lg mb-1">Kamar Mandi Marmer Bookmatch</h4>
+              <p class="text-xs text-gray-500 mb-4">Motif urat marmer tersambung rapi dengan lantai anti-selip dan bathtub independen.</p>
+              <div class="text-accent text-xs font-semibold flex items-center space-x-1">
+                <span>Material: Calacatta Marble & Brushed Gold</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide Card 4 -->
+          <div class="snap-center flex-shrink-0 w-80 sm:w-96 rounded-2xl overflow-hidden bg-light shadow-md border border-gray-100 group">
+            <div class="h-64 overflow-hidden relative">
+              <img src="aset%204.jpg" alt="Home Office Vorin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">Home Office</span>
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold font-display text-dark text-lg mb-1">Executive Work & Library</h4>
+              <p class="text-xs text-gray-500 mb-4">Penyimpanan terintegrasi penuh untuk koleksi buku, berkas rahasia, dan audio conference.</p>
+              <div class="text-accent text-xs font-semibold flex items-center space-x-1">
+                <span>Material: Solid Trembesi & Powder Coated Steel</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide Card 5 -->
+          <div class="snap-center flex-shrink-0 w-80 sm:w-96 rounded-2xl overflow-hidden bg-light shadow-md border border-gray-100 group">
+            <div class="h-64 overflow-hidden relative">
+              <img src="aset%208.jpg" alt="Grand Lounge Vorin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">Grand Lounge</span>
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold font-display text-dark text-lg mb-1">Nero Marquina Wall Entertainment</h4>
+              <p class="text-xs text-gray-500 mb-4">Dinding latar televisi panel marmer gelap dengan kabel tersembunyi total.</p>
+              <div class="text-accent text-xs font-semibold flex items-center space-x-1">
+                <span>Material: Nero Marquina & Integrated Soundbar</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Slider Navigation Controls -->
+        <div class="flex items-center justify-center space-x-4 mt-6">
+          <button id="carousel-prev" class="w-11 h-11 rounded-full bg-light hover:bg-dark hover:text-white border border-gray-200 text-dark flex items-center justify-center transition-all shadow-sm">
+            <iconify-icon icon="solar:arrow-right-linear" class="rotate-180 text-xl"></iconify-icon>
+          </button>
+          <span class="text-xs text-gray-400 font-medium tracking-wider">GESER UNTUK LEBIH BANYAK</span>
+          <button id="carousel-next" class="w-11 h-11 rounded-full bg-light hover:bg-dark hover:text-white border border-gray-200 text-dark flex items-center justify-center transition-all shadow-sm">
+            <iconify-icon icon="solar:arrow-right-linear" class="text-xl"></iconify-icon>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 7. SECTION DETAIL: JAK DZIAŁAMY / WORKFLOW -->
+  <!-- Horizontal grid (4 columns) on desktop with connecting line: absolute top-1/2 h-px bg-gray-100 -translate-y-1/2 z-0 -->
+  <!-- Cards for steps 2 and 4 must have md:translate-y-8 offset for staggered effect -->
+  <!-- Background numbers: 100px font, text-gray-50 or text-gray-100, absolute -top-6 -left-2 -->
+  <!-- ========================================== -->
+  <section id="alur-kerja" class="py-24 bg-light relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+        <div class="inline-flex items-center space-x-2 text-accent font-semibold tracking-widest text-xs uppercase mb-3">
+          <span class="w-8 h-0.5 bg-accent"></span>
+          <span>Jak Działamy • Alur Kerja Profesional</span>
+          <span class="w-8 h-0.5 bg-accent"></span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-dark tracking-tight">
+          Metodologi Pengerjaan Transparan & Terukur
+        </h2>
+        <p class="text-gray-600 text-sm sm:text-base mt-3">
+          4 tahapan pasti yang memastikan proyek renovasi interior Anda selesai tepat waktu, tepat mutu, dan sesuai kesepakatan anggaran.
+        </p>
+      </div>
+
+      <!-- 4-Column Workflow Container with Connecting Line -->
+      <div class="relative">
+        
+        <!-- Connecting Line across desktop (Constraint requirement: absolute top-1/2 h-px bg-gray-200 -translate-y-1/2 z-0) -->
+        <div class="hidden lg:block absolute top-1/2 left-8 right-8 h-0.5 bg-gray-200 -translate-y-1/2 z-0"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          
+          <!-- STEP 1 (Normal Offset) -->
+          <div class="reveal bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden hover:shadow-xl transition-all duration-300 group">
+            <!-- Background Large Number (Constraint requirement: large 100px font, text-gray-100, absolute -top-6 -left-2) -->
+            <span class="absolute -top-6 -left-2 text-[100px] font-bold font-display text-gray-100 select-none pointer-events-none -z-0 group-hover:text-accent/15 transition-colors">01</span>
+            
+            <div class="relative z-10">
+              <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <iconify-icon icon="solar:chat-round-dots-linear" class="text-2xl"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-bold font-display text-dark mb-2">Konsultasi & Survei Lokasi</h3>
+              <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Tahap Awal Bebas Biaya</p>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Pertemuan awal untuk mendengarkan kebutuhan gaya hidup Anda, inspeksi struktur eksisting di lokasi Semarang, dan pengukuran laser digital berpresisi tinggi.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 2 (Constraint requirement: md:translate-y-8 offset for staggered visual effect) -->
+          <div class="reveal md:translate-y-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden hover:shadow-xl transition-all duration-300 group">
+            <span class="absolute -top-6 -left-2 text-[100px] font-bold font-display text-gray-100 select-none pointer-events-none -z-0 group-hover:text-accent/15 transition-colors">02</span>
+            
+            <div class="relative z-10">
+              <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <iconify-icon icon="solar:ruler-angular-linear" class="text-2xl"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-bold font-display text-dark mb-2">3D Render & Kepastian RAB</h3>
+              <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Visualisasi Nyata 4K</p>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Pengembangan rancangan 3D fotorealistik lengkap dengan moodboard sampel material fisik dan lembar Rencana Anggaran Biaya (RAB) terkunci tanpa biaya tak terduga.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 3 (Normal Offset) -->
+          <div class="reveal bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden hover:shadow-xl transition-all duration-300 group">
+            <span class="absolute -top-6 -left-2 text-[100px] font-bold font-display text-gray-100 select-none pointer-events-none -z-0 group-hover:text-accent/15 transition-colors">03</span>
+            
+            <div class="relative z-10">
+              <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <iconify-icon icon="solar:hammer-and-wrench-linear" class="text-2xl"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-bold font-display text-dark mb-2">Pabrikasi & Konstruksi Sipil</h3>
+              <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Presisi & Pengawasan Ketat</p>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Pembuatan kabinet kustom di workshop modern Vorin bersamaan dengan pekerjaan sipil, instalasi listrik, pipa, dan plafon di bawah supervisi arsitek in-house.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 4 (Constraint requirement: md:translate-y-8 offset for staggered visual effect) -->
+          <div class="reveal md:translate-y-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden hover:shadow-xl transition-all duration-300 group">
+            <span class="absolute -top-6 -left-2 text-[100px] font-bold font-display text-gray-100 select-none pointer-events-none -z-0 group-hover:text-accent/15 transition-colors">04</span>
+            
+            <div class="relative z-10">
+              <div class="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <iconify-icon icon="solar:shield-check-linear" class="text-2xl"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-bold font-display text-dark mb-2">Inspeksi & Serah Terima</h3>
+              <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Garansi Resmi 3 Tahun</p>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Pemeriksaan kualitas ketat 50 titik (QC checklist), deep cleaning pembersihan menyeluruh, penyerahan kunci, dan aktivasi kartu garansi purna jual resmi.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 8. STATS & COUNTER SECTION                 -->
+  <!-- Counter Logic: .counter animate 0 to data-target -->
+  <!-- ========================================== -->
+  <section class="py-20 bg-dark text-white relative overflow-hidden border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        
+        <div class="reveal p-6 rounded-xl bg-white/5 border border-white/5">
+          <div class="text-4xl sm:text-5xl font-bold font-display text-accent mb-2">
+            <span class="counter" data-target="280">0</span>+
+          </div>
+          <p class="text-sm font-semibold uppercase tracking-wider text-gray-200">Proyek Renovasi Rampung</p>
+          <p class="text-xs text-gray-400 mt-1">Hunian residensial & area komersial di Jawa Tengah</p>
+        </div>
+
+        <div class="reveal p-6 rounded-xl bg-white/5 border border-white/5">
+          <div class="text-4xl sm:text-5xl font-bold font-display text-accent mb-2">
+            <span class="counter" data-target="12">0</span>
+          </div>
+          <p class="text-sm font-semibold uppercase tracking-wider text-gray-200">Tahun Dedikasi Profesi</p>
+          <p class="text-xs text-gray-400 mt-1">Pengalaman matang dan reputasi terpercaya</p>
+        </div>
+
+        <div class="reveal p-6 rounded-xl bg-white/5 border border-white/5">
+          <div class="text-4xl sm:text-5xl font-bold font-display text-accent mb-2">
+            <span class="counter" data-target="99">0</span>%
+          </div>
+          <p class="text-sm font-semibold uppercase tracking-wider text-gray-200">Kepuasan Klien Positif</p>
+          <p class="text-xs text-gray-400 mt-1">Didasarkan pada ulasan autentik pemilik properti</p>
+        </div>
+
+        <div class="reveal p-6 rounded-xl bg-white/5 border border-white/5">
+          <div class="text-4xl sm:text-5xl font-bold font-display text-accent mb-2">
+            <span class="counter" data-target="36">0</span> Bln
+          </div>
+          <p class="text-sm font-semibold uppercase tracking-wider text-gray-200">Jaminan Garansi Tertulis</p>
+          <p class="text-xs text-gray-400 mt-1">Perlindungan struktur, kebocoran & aksesoris</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 9. TESTIMONIALS (OPINIE / ULASAN KLIEN)    -->
+  <!-- ========================================== -->
+  <section class="py-24 bg-light relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <div class="inline-flex items-center space-x-2 text-accent font-semibold tracking-widest text-xs uppercase mb-3">
+          <span class="w-8 h-0.5 bg-accent"></span>
+          <span>Testimoni Klien</span>
+          <span class="w-8 h-0.5 bg-accent"></span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-dark tracking-tight">
+          Apa Kata Mereka yang Telah Mempercayakan Huniannya pada Vorin?
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="reveal bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col justify-between">
+          <div>
+            <div class="flex text-accent space-x-1 mb-4">
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+              "Renovasi rumah 2 lantai kami di kawasan Candi Sari berjalan sangat mulus. Tim Vorin luar biasa disiplin, dari layout 3D hingga hasil jadi benar-benar 99% persis. Yang paling melegakan adalah RAB-nya terkunci rapi tanpa biaya siluman."
+            </p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center space-x-3">
+            <div class="w-11 h-11 rounded-full bg-accent/20 text-accent font-bold font-display flex items-center justify-center">
+              HW
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-dark font-display">Hendro Wicaksono</h5>
+              <p class="text-xs text-gray-500">Pemilik Rumah Residensial • Candisari, Semarang</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="reveal bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col justify-between">
+          <div>
+            <div class="flex text-accent space-x-1 mb-4">
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+              "Kitchen set dan pantry bersih buatan Vorin benar-benar menjadi pusat perhatian saat ada tamu berkunjung. Pintu kabinet soft-close Blum dan top table quartz-nya sangat kokoh dan mudah dibersihkan. Pelayanan pasca-proyeknya pun sangat responsif."
+            </p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center space-x-3">
+            <div class="w-11 h-11 rounded-full bg-accent/20 text-accent font-bold font-display flex items-center justify-center">
+              SK
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-dark font-display">dr. Shinta Kusuma</h5>
+              <p class="text-xs text-gray-500">Villa & Private Clinic • Gajahmungkur, Semarang</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="reveal bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col justify-between">
+          <div>
+            <div class="flex text-accent space-x-1 mb-4">
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+              "Kami memakai jasa Vorin untuk renovasi kantor cabang dan ruang meeting eksekutif di Semarang. Pengerjaan cepat selesai sebelum deadline pembukaan operasional kantor. Sangat profesional dan direkomendasikan!"
+            </p>
+          </div>
+          <div class="border-t border-gray-100 pt-4 flex items-center space-x-3">
+            <div class="w-11 h-11 rounded-full bg-accent/20 text-accent font-bold font-display flex items-center justify-center">
+              AP
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-dark font-display">Arya Pratama</h5>
+              <p class="text-xs text-gray-500">Managing Director • BSB Commercial Hub</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 10. FAQ ACCORDION                          -->
+  <!-- <details> & <summary> with custom slideDown and arrow rotation -->
+  <!-- ========================================== -->
+  <section id="faq" class="py-24 bg-white relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <div class="inline-flex items-center space-x-2 text-accent font-semibold tracking-widest text-xs uppercase mb-3">
+          <span class="w-8 h-0.5 bg-accent"></span>
+          <span>Pertanyaan Umum (FAQ)</span>
+          <span class="w-8 h-0.5 bg-accent"></span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-display text-dark tracking-tight">
+          Hal yang Kerap Ditanyakan Klien Kami
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- FAQ Item 1 -->
+        <details class="reveal group bg-light rounded-2xl border border-gray-200 p-6 transition-all duration-300">
+          <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+            <span class="text-base sm:text-lg font-bold font-display text-dark group-hover:text-accent transition-colors">
+              Apakah konsultasi awal dan survei lokasi di Kota Semarang dikenakan biaya?
+            </span>
+            <span class="faq-icon ml-4 text-xl text-gray-400 group-hover:text-accent transition-transform duration-300 flex-shrink-0">
+              <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+            </span>
+          </summary>
+          <div class="faq-content mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600 leading-relaxed">
+            Tidak sama sekali. Konsultasi tatap muka awal, diskusi kebutuhan konsep desain, dan pengukuran survei lokasi langsung untuk area Kota Semarang dan sekitarnya kami berikan secara <strong>GRATIS tanpa ikatan kontrak</strong>.
+          </div>
+        </details>
+
+        <!-- FAQ Item 2 -->
+        <details class="reveal group bg-light rounded-2xl border border-gray-200 p-6 transition-all duration-300">
+          <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+            <span class="text-base sm:text-lg font-bold font-display text-dark group-hover:text-accent transition-colors">
+              Bagaimana cara Vorin memastikan biaya renovasi tidak membengkak di tengah jalan?
+            </span>
+            <span class="faq-icon ml-4 text-xl text-gray-400 group-hover:text-accent transition-transform duration-300 flex-shrink-0">
+              <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+            </span>
+          </summary>
+          <div class="faq-content mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600 leading-relaxed">
+            Kami menerapkan sistem <strong>RAB Locked Contract</strong>. Sebelum pekerjaan dimulai, seluruh spesifikasi merek material, kode warna, jenis fitting, dan volume pekerjaan telah dituangkan dalam kontrak terinci. Tidak ada penambahan biaya kecuali jika Anda mengajukan revisi atau pekerjaan tambah secara resmi melalui lembar adendum tertulis.
+          </div>
+        </details>
+
+        <!-- FAQ Item 3 -->
+        <details class="reveal group bg-light rounded-2xl border border-gray-200 p-6 transition-all duration-300">
+          <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+            <span class="text-base sm:text-lg font-bold font-display text-dark group-hover:text-accent transition-colors">
+              Berapa lama estimasi durasi pengerjaan proyek interior renovasi?
+            </span>
+            <span class="faq-icon ml-4 text-xl text-gray-400 group-hover:text-accent transition-transform duration-300 flex-shrink-0">
+              <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+            </span>
+          </summary>
+          <div class="faq-content mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600 leading-relaxed">
+            Waktu pengerjaan bergantung pada skala proyek. Untuk pengerjaan ruangan spesifik seperti Master Bedroom atau Kitchen Set umumnya memakan waktu 3 hingga 5 minggu. Sedangkan renovasi interior menyeluruh satu rumah residensial biasanya berlangsung antara 2 hingga 4 bulan dengan time-schedule mingguan yang dilaporkan secara berkala kepada Anda.
+          </div>
+        </details>
+
+        <!-- FAQ Item 4 -->
+        <details class="reveal group bg-light rounded-2xl border border-gray-200 p-6 transition-all duration-300">
+          <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+            <span class="text-base sm:text-lg font-bold font-display text-dark group-hover:text-accent transition-colors">
+              Apakah seluruh hasil pengerjaan Vorin dilindungi garansi resmi?
+            </span>
+            <span class="faq-icon ml-4 text-xl text-gray-400 group-hover:text-accent transition-transform duration-300 flex-shrink-0">
+              <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+            </span>
+          </summary>
+          <div class="faq-content mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600 leading-relaxed">
+            Ya, tentu. Kami memberikan garansi purna jual resmi hingga <strong>3 tahun</strong> untuk pekerjaan konstruksi, ketahanan struktur kayu, engsel dan rel aksesoris furnitur, serta jaminan perlindungan kebocoran waterproofing pada area basah.
+          </div>
+        </details>
+
+        <!-- FAQ Item 5 -->
+        <details class="reveal group bg-light rounded-2xl border border-gray-200 p-6 transition-all duration-300">
+          <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+            <span class="text-base sm:text-lg font-bold font-display text-dark group-hover:text-accent transition-colors">
+              Apakah saya bisa memesan renovasi bertahap per ruangan?
+            </span>
+            <span class="faq-icon ml-4 text-xl text-gray-400 group-hover:text-accent transition-transform duration-300 flex-shrink-0">
+              <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+            </span>
+          </summary>
+          <div class="faq-content mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600 leading-relaxed">
+            Bisa. Kami melayani skema renovasi bertahap (phased renovation), misalnya mendahulukan dapur bersih dan kamar tidur utama terlebih dahulu, lalu melanjutkan ke ruang tamu dan fasad pada tahap berikutnya sesuai alokasi anggaran Anda.
+          </div>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 11. CONTACT & LOCATION SECTION             -->
+  <!-- Custom Input Style: .input-line            -->
+  <!-- Direct WhatsApp: 081257591101              -->
+  <!-- Direct Email: taherdaeng386@gmail.com       -->
+  <!-- Lokasi: Kota Semarang, Jawa Tengah         -->
+  <!-- Google Maps: grayscale with color on hover -->
+  <!-- ========================================== -->
+  <section id="kontak" class="py-24 bg-dark text-white relative overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        
+        <!-- Left: Contact Details & Office -->
+        <div class="lg:col-span-5 reveal">
+          <div class="inline-flex items-center space-x-2 text-accent font-semibold tracking-widest text-xs uppercase mb-3">
+            <span class="w-8 h-0.5 bg-accent"></span>
+            <span>Hubungi Vorin Studio</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-white tracking-tight mb-6">
+            Mulai Diskusi Rencana Renovasi Anda Hari Ini.
+          </h2>
+
+          <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-8">
+            Diskusikan visi ruang impian Anda bersama konsultan interior kami. Kami siap mengunjungi lokasi Anda di Semarang untuk memberikan estimasi dan masukan teknis awal.
+          </p>
+
+          <!-- Contact Cards Info -->
+          <div class="space-y-6 mb-8">
+            
+            <!-- WhatsApp Contact -->
+            <a href="https://wa.me/6281257591101?text=Halo%20Vorin%20Interior,%20saya%20ingin%20berkonsultasi%20mengenai%20renovasi%20interior." target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-accent hover:bg-white/10 transition-all duration-300 group">
+              <div class="w-12 h-12 rounded-xl bg-accent/20 text-accent flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <iconify-icon icon="solar:phone-calling-linear" class="text-2xl"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400 uppercase font-semibold">Nomor WhatsApp Resmi</p>
+                <p class="text-base font-bold text-white group-hover:text-accent transition-colors">081257591101</p>
+                <span class="text-[11px] text-green-400 font-medium">● Online Konsultasi Cepat</span>
+              </div>
+            </a>
+
+            <!-- Email Contact -->
+            <a href="mailto:taherdaeng386@gmail.com" class="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-accent hover:bg-white/10 transition-all duration-300 group">
+              <div class="w-12 h-12 rounded-xl bg-accent/20 text-accent flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <iconify-icon icon="solar:letter-linear" class="text-2xl"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400 uppercase font-semibold">Email Korespondensi</p>
+                <p class="text-base font-bold text-white group-hover:text-accent transition-colors">taherdaeng386@gmail.com</p>
+                <span class="text-[11px] text-gray-400">Respon maksimal 1x24 jam</span>
+              </div>
+            </a>
+
+            <!-- Location Card -->
+            <div class="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="w-12 h-12 rounded-xl bg-accent/20 text-accent flex items-center justify-center flex-shrink-0">
+                <iconify-icon icon="solar:map-point-linear" class="text-2xl"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400 uppercase font-semibold">Lokasi Workshop & Studio</p>
+                <p class="text-base font-bold text-white">Kota Semarang, Jawa Tengah</p>
+                <span class="text-[11px] text-gray-400">Melayani Kota Semarang & Wilayah Sekitarnya</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Working Hours -->
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5 text-xs text-gray-400 flex items-center space-x-3">
+            <iconify-icon icon="solar:clock-circle-linear" class="text-xl text-accent flex-shrink-0"></iconify-icon>
+            <div>
+              <span class="font-semibold text-gray-200">Jam Operasional Studio:</span><br>
+              Senin – Sabtu: 08:30 – 17:30 WIB | Minggu: Dengan Janji Temu
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Contact Form using .input-line custom styling -->
+        <div class="lg:col-span-7 reveal">
+          <div class="glass-card-dark p-8 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
+            <h3 class="text-2xl font-bold font-display text-white mb-2">Formulir Permintaan Konsultasi</h3>
+            <p class="text-xs text-gray-400 mb-8">Isi data singkat berikut, kami akan menghubungi Anda via WhatsApp beserta perkiraan awal.</p>
+
+            <form id="contact-form" class="space-y-6">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs uppercase font-semibold tracking-wider text-gray-400 mb-1">Nama Lengkap Anda *</label>
+                  <input type="text" id="form-name" required placeholder="Contoh: Budi Santoso" class="input-line">
+                </div>
+
+                <div>
+                  <label class="block text-xs uppercase font-semibold tracking-wider text-gray-400 mb-1">Nomor WhatsApp Aktif *</label>
+                  <input type="tel" id="form-phone" required placeholder="Contoh: 081234567890" class="input-line">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs uppercase font-semibold tracking-wider text-gray-400 mb-1">Jenis Layanan / Ruangan</label>
+                  <select id="form-service" class="input-line bg-dark text-white cursor-pointer">
+                    <option value="Renovasi Total Rumah" class="bg-dark text-white">Renovasi Total Rumah / Hunian</option>
+                    <option value="Kitchen Set & Pantry" class="bg-dark text-white">Kitchen Set & Dapur Bersih</option>
+                    <option value="Kamar Tidur & Wardrobe" class="bg-dark text-white">Kamar Tidur & Wardrobe</option>
+                    <option value="Kamar Mandi Mewah" class="bg-dark text-white">Kamar Mandi Mewah / Spa</option>
+                    <option value="Ruang Komersial / Kantor" class="bg-dark text-white">Ruang Komersial / Kantor / Kafe</option>
+                    <option value="Desain 3D Saja" class="bg-dark text-white">Hanya Desain 3D Arsitektur</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs uppercase font-semibold tracking-wider text-gray-400 mb-1">Lokasi Properti di Semarang</label>
+                  <input type="text" id="form-location" placeholder="Contoh: Candi, Banyumanik, BSB, dll." class="input-line">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs uppercase font-semibold tracking-wider text-gray-400 mb-1">Ceritakan Kebutuhan atau Gaya Desain yang Diinginkan</label>
+                <textarea id="form-message" rows="3" placeholder="Tuliskan ukuran ruangan, preferensi material, perkiraan target waktu, atau anggaran yang disiapkan..." class="input-line resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-full bg-accent text-white font-semibold text-sm uppercase tracking-wider hover:bg-accent-hover transition-all duration-300 shadow-xl flex items-center justify-center space-x-2">
+                <span>Kirim Permintaan via WhatsApp</span>
+                <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+              </button>
+
+              <p class="text-[11px] text-gray-400 text-center">
+                Pesan akan langsung tersambung ke WhatsApp kami di <strong>081257591101</strong> untuk respon langsung.
+              </p>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Google Maps Integration with Grayscale Transition Effect -->
+      <div class="mt-16 reveal">
+        <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative h-80 sm:h-96 group">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126715.93816480112!2d110.3346626071477!3d-7.005145325514652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b4d3f0d024d%3A0x1e0432b9da3cb9f2!2sKota%20Semarang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1715000000000!5m2!1sid!2sid" 
+            class="w-full h-full border-0 map-grayscale" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Peta Lokasi Vorin Semarang">
+          </iframe>
+          <!-- Floating Overlay Badge -->
+          <div class="absolute bottom-4 left-4 bg-dark/90 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 text-white text-xs flex items-center space-x-2 pointer-events-none">
+            <iconify-icon icon="solar:map-point-linear" class="text-accent text-base"></iconify-icon>
+            <span><strong>Kota Semarang</strong>, Jawa Tengah (Arahkan kursor untuk warna peta)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 12. FOOTER                                 -->
+  <!-- ========================================== -->
+  <footer class="bg-[#141416] text-white py-14 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-4">
+          <img src="vorin-logo-preview-light.png" alt="Vorin Interior" class="h-9 w-auto object-contain mb-4">
+          <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">
+            Studio desain interior dan kontraktor renovasi prestisius di Kota Semarang, Jawa Tengah. Memadukan keahlian teknik tinggi, transparansi biaya, dan komitmen material terbaik.
+          </p>
+          <div class="flex items-center space-x-3">
+            <a href="https://wa.me/6281257591101" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-accent transition-colors">
+              <iconify-icon icon="solar:phone-calling-linear"></iconify-icon>
+            </a>
+            <a href="mailto:taherdaeng386@gmail.com" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-accent transition-colors">
+              <iconify-icon icon="solar:letter-linear"></iconify-icon>
+            </a>
+            <a href="#hero" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-accent transition-colors">
+              <iconify-icon icon="solar:map-point-linear"></iconify-icon>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="lg:col-span-3">
+          <h4 class="text-sm font-bold font-display uppercase tracking-wider text-white mb-4">Navigasi Utama</h4>
+          <ul class="space-y-2.5 text-xs text-gray-400">
+            <li><a href="#hero" class="hover:text-accent transition-colors">Beranda Utama</a></li>
+            <li><a href="#tentang" class="hover:text-accent transition-colors">Tentang Vorin Studio</a></li>
+            <li><a href="#layanan" class="hover:text-accent transition-colors">Layanan & Spesialisasi</a></li>
+            <li><a href="#realisasi" class="hover:text-accent transition-colors">Galeri Portofolio Nyata</a></li>
+            <li><a href="#alur-kerja" class="hover:text-accent transition-colors">Alur & Metodologi Kerja</a></li>
+            <li><a href="#faq" class="hover:text-accent transition-colors">Pertanyaan Umum (FAQ)</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Links -->
+        <div class="lg:col-span-2">
+          <h4 class="text-sm font-bold font-display uppercase tracking-wider text-white mb-4">Layanan</h4>
+          <ul class="space-y-2.5 text-xs text-gray-400">
+            <li><a href="#layanan" class="hover:text-accent transition-colors">Renovasi Hunian Mewah</a></li>
+            <li><a href="#layanan" class="hover:text-accent transition-colors">Custom Kitchen Set</a></li>
+            <li><a href="#layanan" class="hover:text-accent transition-colors">Desain 3D Fotoreal</a></li>
+            <li><a href="#layanan" class="hover:text-accent transition-colors">Kamar Mandi Spa</a></li>
+            <li><a href="#layanan" class="hover:text-accent transition-colors">Executive Office</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact Card -->
+        <div class="lg:col-span-3">
+          <h4 class="text-sm font-bold font-display uppercase tracking-wider text-white mb-4">Kontak Langsung</h4>
+          <p class="text-xs text-gray-400 leading-relaxed mb-3">
+            <strong>Studio & Workshop:</strong><br>
+            Kota Semarang, Jawa Tengah, Indonesia
+          </p>
+          <p class="text-xs text-gray-400 mb-2">
+            <strong>WhatsApp:</strong> <a href="https://wa.me/6281257591101" class="text-accent hover:underline">081257591101</a>
+          </p>
+          <p class="text-xs text-gray-400">
+            <strong>Email:</strong> <a href="mailto:taherdaeng386@gmail.com" class="text-accent hover:underline">taherdaeng386@gmail.com</a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+        <p>© 2026 VORIN INTERIOR. Hak Cipta Dilindungi Undang-Undang.</p>
+        <p class="mt-2 sm:mt-0">Arsitektur & Renovasi Interior Eksklusif • Kota Semarang</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ========================================== -->
+  <!-- 13. MOBILE FLOATING WHATSAPP BUTTON        -->
+  <!-- Fixed, bottom-6, right-6, z-50 (Mobile only) -->
+  <!-- ========================================== -->
+  <a href="https://wa.me/6281257591101?text=Halo%20Vorin%20Interior,%20saya%20ingin%20berkonsultasi%20renovasi%20interior." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="lg:hidden fixed bottom-6 right-6 z-50 flex items-center space-x-2 px-4 py-3 rounded-full bg-accent text-white shadow-2xl hover:bg-accent-hover transition-all animate-pulseSubtle"
+     aria-label="Chat WhatsApp Vorin">
+    <iconify-icon icon="solar:chat-round-dots-linear" class="text-2xl"></iconify-icon>
+    <span class="text-xs font-bold uppercase tracking-wider">Chat WA</span>
+  </a>
+
+
+  <!-- ========================================== -->
+  <!-- 14. INTERACTIVE PROJECT LIGHTBOX MODAL     -->
+  <!-- ========================================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden bg-dark/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300">
+    <div class="relative bg-dark border border-white/15 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto no-scrollbar shadow-2xl text-white">
+      
+      <!-- Close Button -->
+      <button id="modal-close-btn" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/60 text-white hover:text-accent hover:bg-black/90 flex items-center justify-center transition-colors">
+        <iconify-icon icon="solar:close-circle-linear" class="text-2xl"></iconify-icon>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-12">
+        
+        <!-- Modal Image Showcase -->
+        <div class="md:col-span-7 bg-black flex items-center justify-center min-h-[300px] sm:min-h-[420px] relative">
+          <img id="modal-img" src="" alt="Proyek Vorin" class="w-full h-full max-h-[500px] object-contain">
+        </div>
+
+        <!-- Modal Details -->
+        <div class="md:col-span-5 p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center space-x-2 text-accent text-xs font-semibold uppercase tracking-wider mb-2">
+              <span id="modal-category">Kategori Proyek</span>
+            </div>
+            
+            <h3 id="modal-title" class="text-xl sm:text-2xl font-bold font-display text-white mb-2 leading-tight">
+              Judul Proyek
+            </h3>
+
+            <div class="flex items-center space-x-1 text-xs text-gray-400 mb-4">
+              <iconify-icon icon="solar:map-point-linear" class="text-accent text-sm"></iconify-icon>
+              <span id="modal-location">Lokasi Proyek</span>
+            </div>
+
+            <div class="border-t border-white/10 pt-4 mb-6">
+              <h5 class="text-xs uppercase font-semibold text-gray-300 mb-2">Deskripsi Detail Pekerjaan:</h5>
+              <p id="modal-desc" class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                Deskripsi lengkap...
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/10">
+            <a id="modal-wa-btn" href="https://wa.me/6281257591101" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center space-x-2 py-3 rounded-full bg-accent text-white font-semibold text-xs uppercase tracking-wider hover:bg-accent-hover transition-colors shadow-lg">
+              <iconify-icon icon="solar:chat-round-dots-linear" class="text-base"></iconify-icon>
+              <span>Konsultasikan Desain Serupa</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- 15. JAVASCRIPT LOGIC & INTERACTION SCRIPTS -->
+  <!-- ========================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // ------------------------------------------
+      // 1. Smooth Scrolling with 80px Offset
+      // (Constraint: Prevents fixed header obscuring section titles)
+      // ------------------------------------------
+      const navLinks = document.querySelectorAll('a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#' || targetId === '') return;
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            const headerOffset = 80;
+            const elementPosition = targetEl.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+            }
+          }
+        });
+      });
+
+      // ------------------------------------------
+      // 2. Dynamic Glassmorphic Navbar on Scroll
+      // ------------------------------------------
+      const mainNav = document.getElementById('main-nav');
+      const logoLight = document.getElementById('nav-logo-light');
+      const logoDark = document.getElementById('nav-logo-dark');
+      const desktopNavLinks = document.querySelectorAll('.nav-link');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          // Switch to Light Glassmorphism: backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.9);
+          mainNav.classList.remove('nav-glass-dark');
+          mainNav.classList.add('nav-glass-light');
+          logoLight.classList.add('hidden');
+          logoDark.classList.remove('hidden');
+
+          desktopNavLinks.forEach(link => {
+            link.classList.remove('text-white/90');
+            link.classList.add('text-dark');
+          });
+        } else {
+          // Switch back to Hero overlay transparent dark
+          mainNav.classList.remove('nav-glass-light');
+          mainNav.classList.add('nav-glass-dark');
+          logoDark.classList.add('hidden');
+          logoLight.classList.remove('hidden');
+
+          desktopNavLinks.forEach(link => {
+            link.classList.remove('text-dark');
+            link.classList.add('text-white/90');
+          });
+        }
+      });
+
+      // ------------------------------------------
+      // 3. Mobile Menu Overlay Toggle
+      // ------------------------------------------
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      // ------------------------------------------
+      // 4. Reveal Animations (IntersectionObserver)
+      // opacity: 0; transform: translateY(30px); -> .active { opacity: 1; transform: translateY(0); }
+      // ------------------------------------------
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // ------------------------------------------
+      // 5. Counter Logic (Animate 0 to data-target)
+      // ------------------------------------------
+      const counterElements = document.querySelectorAll('.counter');
+      let countersStarted = false;
+
+      const runCounter = (el) => {
+        const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        const duration = 2000; // ms
+        const startTime = performance.now();
+
+        const updateCount = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease-out cubic
+          const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+          const currentVal = Math.floor(easeOutProgress * target);
+
+          el.innerText = currentVal.toLocaleString('id-ID');
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            el.innerText = target.toLocaleString('id-ID');
+          }
+        };
+
+        requestAnimationFrame(updateCount);
+      };
+
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            runCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+
+      counterElements.forEach(el => counterObserver.observe(el));
+
+      // ------------------------------------------
+      // 6. Portfolio Category Filter Logic
+      // ------------------------------------------
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const portfolioCards = document.querySelectorAll('.masonry-item');
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterButtons.forEach(b => {
+            b.classList.remove('bg-dark', 'text-white');
+            b.classList.add('bg-white', 'text-gray-700');
+          });
+          this.classList.remove('bg-white', 'text-gray-700');
+          this.classList.add('bg-dark', 'text-white');
+
+          const filterVal = this.getAttribute('data-filter');
+
+          portfolioCards.forEach(card => {
+            const cardCat = card.getAttribute('data-category');
+            if (filterVal === 'all' || cardCat === filterVal) {
+              card.style.display = 'inline-block';
+              card.classList.add('active');
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // ------------------------------------------
+      // 7. Interactive Lightbox Modal for Projects
+      // ------------------------------------------
+      const modal = document.getElementById('project-modal');
+      const modalCloseBtn = document.getElementById('modal-close-btn');
+      const modalImg = document.getElementById('modal-img');
+      const modalTitle = document.getElementById('modal-title');
+      const modalCategory = document.getElementById('modal-category');
+      const modalLocation = document.getElementById('modal-location');
+      const modalDesc = document.getElementById('modal-desc');
+      const modalWaBtn = document.getElementById('modal-wa-btn');
+
+      const projectCards = document.querySelectorAll('.project-card');
+
+      projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const title = card.getAttribute('data-title');
+          const category = card.getAttribute('data-category');
+          const location = card.getAttribute('data-location');
+          const img = card.getAttribute('data-img');
+          const desc = card.getAttribute('data-desc');
+
+          modalImg.src = img;
+          modalTitle.textContent = title;
+          modalCategory.textContent = category;
+          modalLocation.textContent = location;
+          modalDesc.textContent = desc;
+
+          const waUrl = `https://wa.me/6281257591101?text=Halo%20Vorin%20Interior,%20saya%20tertarik%20dengan%20proyek%20${encodeURIComponent(title)}%20di%20${encodeURIComponent(location)}.%20Bisa%20jelaskan%20lebih%20lanjut?`;
+          modalWaBtn.href = waUrl;
+
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      const closeModal = () => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      };
+
+      if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // ------------------------------------------
+      // 8. Carousel Navigation (Next / Prev)
+      // ------------------------------------------
+      const carouselTrack = document.getElementById('carousel-track');
+      const prevBtn = document.getElementById('carousel-prev');
+      const nextBtn = document.getElementById('carousel-next');
+
+      if (carouselTrack && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+          carouselTrack.scrollBy({ left: -340, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+          carouselTrack.scrollBy({ left: 340, behavior: 'smooth' });
+        });
+      }
+
+      // ------------------------------------------
+      // 9. Contact Form WhatsApp Dispatch
+      // ------------------------------------------
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('form-name').value.trim();
+          const phone = document.getElementById('form-phone').value.trim();
+          const service = document.getElementById('form-service').value;
+          const location = document.getElementById('form-location').value.trim() || 'Kota Semarang';
+          const message = document.getElementById('form-message').value.trim() || '-';
+
+          const text = `Halo Vorin Interior,%0A%0ASaya ingin konsultasi renovasi interior:%0A- Nama: ${encodeURIComponent(name)}%0A- WhatsApp: ${encodeURIComponent(phone)}%0A- Layanan: ${encodeURIComponent(service)}%0A- Lokasi Properti: ${encodeURIComponent(location)}%0A- Kebutuhan/Catatan: ${encodeURIComponent(message)}%0A%0AMohon info dan ketersediaan survei lokasi. Terima kasih!`;
+
+          window.open(`https://wa.me/6281257591101?text=${text}`, '_blank');
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>
+
